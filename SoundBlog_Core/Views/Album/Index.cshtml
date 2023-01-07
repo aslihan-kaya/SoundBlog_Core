@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SoundBlog.Models.Album>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AlLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<p>
+    <a asp-action="Create">Yeni Albüm Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbunDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtistID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbunDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AlbumID">Edit</a> |
+               
+                <a asp-action="Delete" asp-route-id="@item.AlbumID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

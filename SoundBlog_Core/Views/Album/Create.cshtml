@@ -1,0 +1,62 @@
+﻿@model SoundBlog.Models.Album
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AlLayout.cshtml";
+}
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h4>Yeni Albüm ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlbumName" class="control-label"></label>
+                <input asp-for="AlbumName" class="form-control" />
+                <span asp-validation-for="AlbumName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumYear" class="control-label"></label>
+                <input asp-for="AlbumYear" class="form-control" />
+                <span asp-validation-for="AlbumYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbunDuration" class="control-label"></label>
+                <input asp-for="AlbunDuration" class="form-control" />
+                <span asp-validation-for="AlbunDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumPrice" class="control-label"></label>
+                <input asp-for="AlbumPrice" class="form-control" />
+                <span asp-validation-for="AlbumPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeID" class="control-label"></label>
+                <input asp-for="TypeID" class="form-control" />
+                <span asp-validation-for="TypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtistID" class="control-label"></label>
+                <input asp-for="ArtistID" class="form-control" />
+                <span asp-validation-for="ArtistID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

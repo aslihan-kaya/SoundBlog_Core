@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SoundBlog.Models.Song>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AlLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p>
+    <a asp-action="Create">Yeni Şarkı ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SingName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lyricist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SongDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lyricist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SongID">Edit</a> |
+               
+                <a asp-action="Delete" asp-route-id="@item.SongID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
